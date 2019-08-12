@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge Two</title>
+    
+    <script type="text/javascript">
+	// YOUR CODE HERE
+    function onClick(){
+      var input = document.getElementById('shippingBox');
+      var text1 = document.getElementById('billing').value;
+      console.log(text1)
+      if(input.checked) {
+          document.getElementById("shipping").value = text1;
+          document.getElementById("shipping").disabled = true;
+       } else {
+          document.getElementById("shipping").disabled = false;
+          document.getElementById("shipping").value = '';
+       }
+   }
+    </script>
+</head>
+<body>
+    <h1>Challenge Two</h1>
+    <!-- Update the form element, but do not add or change any ids or classes. -->
+    <form action='ch3.html'>
+      <fieldset>
+        <legend>Billing Information</legend>
+        <div>
+          <label for ="billing">Billing Address:</label><br>
+          <textarea name="billingAdd" id="billing"></textarea>
+          </label>
+        </div>
+
+        <div>
+          <label for ="home">Shipping Information:</label><br>
+          <input type="checkbox" name="useBilling" onClick='onClick()' id="shippingBox"> Same as above
+          </label>
+        <br>
+        <textarea name="homeAdd" id="shipping"></textarea>
+        </div>
+        <input type = "submit" value = "Go To Challenge 3">
+      </fieldset>
+</body>
+</html>
